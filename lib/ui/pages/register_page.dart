@@ -53,7 +53,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     contentPadding: EdgeInsets.fromLTRB(16, 5, 0, 5),
                     hintStyle:
-                    blackTextFont.copyWith(color: greyColor, fontSize: 14)),
+                        blackTextFont.copyWith(color: greyColor, fontSize: 14)),
               ),
               SizedBox(
                 height: 12,
@@ -67,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     contentPadding: EdgeInsets.fromLTRB(16, 5, 0, 5),
                     hintStyle:
-                    blackTextFont.copyWith(color: greyColor, fontSize: 14)),
+                        blackTextFont.copyWith(color: greyColor, fontSize: 14)),
               ),
               SizedBox(
                 height: 12,
@@ -82,7 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     contentPadding: EdgeInsets.fromLTRB(16, 5, 0, 5),
                     hintStyle:
-                    blackTextFont.copyWith(color: greyColor, fontSize: 14)),
+                        blackTextFont.copyWith(color: greyColor, fontSize: 14)),
               ),
               SizedBox(
                 height: 12,
@@ -98,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     contentPadding: EdgeInsets.fromLTRB(16, 5, 0, 5),
                     hintStyle:
-                    blackTextFont.copyWith(color: greyColor, fontSize: 14)),
+                        blackTextFont.copyWith(color: greyColor, fontSize: 14)),
                 onTap: () {
                   showDatePicker(
                           context: context,
@@ -266,7 +266,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     } else if (passwordController.text.length < 7) {
                       final snackBar = SnackBar(
                         content:
-                        const Text('Masukkan password minimal 7 karakter'),
+                            const Text('Masukkan password minimal 7 karakter'),
                         action: SnackBarAction(
                           onPressed: () {},
                           label: '',
@@ -282,14 +282,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       showDialog(
                           context: context,
                           builder: (context) => CustomDialog(
-                            nama: namaController.text,
-                            email: emailController.text,
-                            tanggal_lahir: tanggalLahirController.text,
-                            jenis_kelamin: (chooseGender == gender.M)
-                                ? "Laki - laki"
-                                : "Perempuan",
-                            rekomendasi: enableCb,
-                          ));
+                                nama: namaController.text,
+                                email: emailController.text,
+                                tanggal_lahir: tanggalLahirController.text,
+                                jenis_kelamin: (chooseGender == gender.M)
+                                    ? "Laki - laki"
+                                    : "Perempuan",
+                                rekomendasi: enableCb,
+                              ));
                     }
                   },
                 ),
