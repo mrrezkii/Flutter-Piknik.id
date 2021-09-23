@@ -37,11 +37,13 @@ class ShowMorePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 9.0, top: 5, bottom: 15),
                 child: Text('Pilihan populer dengan standar protokol kesehatan',
-                    style: blueBoldTextFont.copyWith(fontSize: 16)),
+                    style: blueBoldTextFont.copyWith(fontSize: 13)),
               ),
-              Column(
-                children: mockPlace.map((e) => DetailPlaceCard(e)).toList(),
-              ),
+              Column(children: [
+                Wrap(
+                  children: mockPlace.map((e) => DetailPlaceCard(e)).toList(),
+                )
+              ]),
               SizedBox(
                 height: 50,
               )

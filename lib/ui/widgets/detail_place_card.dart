@@ -12,7 +12,8 @@ class DetailPlaceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(18, 18, 18, 0),
+      width: MediaQuery.of(context).size.width / 2.2,
+      margin: EdgeInsets.fromLTRB(5, 20, 10, 0),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(16)),
@@ -21,7 +22,11 @@ class DetailPlaceCard extends StatelessWidget {
         children: [
           Center(
             child: ClipRRect(
-              child: Image.network(place.url),
+              child: Image.network(
+                place.url,
+                width: double.infinity,
+                height: 100,
+              ),
               borderRadius: BorderRadius.circular(7.0),
             ),
           ),
@@ -52,23 +57,30 @@ class DetailPlaceCard extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Row(
+          Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
-                  SvgPicture.asset("assets/vector/ic_star.svg"),
+                  SvgPicture.asset(
+                    "assets/vector/ic_star.svg",
+                    width: 12,
+                  ),
                   SizedBox(
-                    width: 4,
+                    width: 6,
                   ),
                   Text(
                     "${place.rating} (dari 3 review)",
                     style: blackMediumTextFont.copyWith(
-                        fontSize: 9, color: greyColor),
+                        fontSize: 12, color: greyColor),
                   ),
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     "Mulai dari",
@@ -89,7 +101,11 @@ class DetailPlaceCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ElevatedButton(
-                child: Text("Pesan Sekarang"),
+                child: Text(
+                  "Pesan",
+                  style:
+                      blackTextFont.copyWith(fontSize: 12, color: Colors.white),
+                ),
                 onPressed: () {},
               ),
             ],

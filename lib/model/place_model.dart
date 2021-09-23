@@ -15,14 +15,14 @@ class PlaceModel {
 
 List<PlaceModel> mockPlace = [
   PlaceModel(
-      name: "Batu Kuda Manglayang",
+      name: "Batu Kuda\nManglayang",
       location: "Cibiru Wetan, Bandung",
       url:
           "https://cdn-2.tstatic.net/travel/foto/bank/images/objek-wisata-batu-kuda.jpg",
       price: 100000,
       rating: 5.0),
   PlaceModel(
-      name: "Kampung Bamboo",
+      name: "Kampung Bamboo Bandung",
       location: "Kampung Bamboo",
       url:
           "https://tempatwisatadibandung.info/wp-content/uploads/2016/09/Kampung-bamboo-bandung.jpg",
@@ -36,7 +36,7 @@ List<PlaceModel> mockPlace = [
       price: 750000,
       rating: 3.3),
   PlaceModel(
-      name: "ine Forest Camp",
+      name: "Pine Forest Camp Ground",
       location: "Lembang, Bandung",
       url:
           "https://www.hargatiket.net/wp-content/uploads/2019/11/Pine-Forest-Camp.jpg",
