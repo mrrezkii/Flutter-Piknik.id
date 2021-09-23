@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/ui/pages/register_page.dart';
+import 'package:flutter_basic/ui/pages/show_more_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: RegisterPage(),
+      home: ShowMorePage(),
     );
   }
 }
