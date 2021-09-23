@@ -2,6 +2,12 @@ Nama : Muhammad Rezki Ananda
 <br>
 Asal : Universitas Telkom
 
+## Re Task 2 - Flutter Basic
+
+### Screenshot Screen
+
+<img src="https://raw.githubusercontent.com/newbiexpert/Flutter-Piknik.id/master/screenshots/Screenshot_1632368777.png" width="200" />
+
 ## Tugas 3 - User Input and Forms
 
 ### Screenshot Screen
