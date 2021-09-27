@@ -15,7 +15,7 @@ class PlaceModel {
 
 List<PlaceModel> mockPlace = [
   PlaceModel(
-      name: "Batu Kuda\nManglayang",
+      name: "Batu Kuda Manglayang Ciburu",
       location: "Cibiru Wetan, Bandung",
       url:
           "https://cdn-2.tstatic.net/travel/foto/bank/images/objek-wisata-batu-kuda.jpg",

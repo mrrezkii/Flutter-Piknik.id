@@ -11,35 +11,34 @@ class SplashScreenPage extends StatefulWidget {
 }
 
 class _SplashScreenPageState extends State<SplashScreenPage> {
-  
   @override
   void initState() {
     startSplashScreen();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: Image.asset("assets/images/logo.png", width: 150,),
-          )
-        ],
-      )
-    );
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Center(
+          child: Image.asset(
+            "assets/images/logo.png",
+            width: 150,
+          ),
+        )
+      ],
+    ));
   }
 
-  startSplashScreen () async {
+  startSplashScreen() async {
     var duration = const Duration(seconds: 3);
-    return Timer(duration, (){
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context){
-            return MainPage();
-          }));
+    return Timer(duration, () {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return MainPage();
+      }));
     });
   }
 }
