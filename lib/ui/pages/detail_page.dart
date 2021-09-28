@@ -28,15 +28,15 @@ class _DetailPageState extends State<DetailPage> {
     super.initState();
     if (widget.place == null) {
       widget.place = PlaceModel(
-          name: "Nama Tempat",
-          location: "Lokasi",
+          name: "",
+          location: "",
           url:
               "https://cdn.pixabay.com/photo/2018/03/23/22/11/question-mark-3255140_960_720.jpg",
           price: 0,
           rating: 0);
     }
     if (widget.user == null) {
-      widget.user = UserModel(name: "Nama", email: "Email", gender: "Gender");
+      widget.user = UserModel(name: "", email: "", gender: "");
     }
   }
 
@@ -47,7 +47,7 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         backgroundColor: primaryColor,
         brightness: Brightness.dark,
-        title: Text((widget.place!.name) ?? "Nama"),
+        title: Text((widget.place!.name)),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -192,7 +192,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: nameController..text = widget.user!.name,
+                  controller: nameController..text = (widget.user!.name),
                   decoration: InputDecoration(
                       hintText: "Nama",
                       border: OutlineInputBorder(
@@ -206,7 +206,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: emailController..text = widget.user!.email,
+                  controller: emailController..text = (widget.user!.email),
                   decoration: InputDecoration(
                       hintText: "Email",
                       border: OutlineInputBorder(
@@ -220,7 +220,9 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: placeNameController..text = widget.place!.name,
+                  controller: placeNameController
+                    ..text = widget.place!.name
+                    ..text,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(

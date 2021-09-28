@@ -71,9 +71,14 @@ class CustomDialog extends StatelessWidget {
                     "Email : ",
                     style: blackTextFont.copyWith(fontSize: 14),
                   ),
-                  Text(
-                    email,
-                    style: blackBoldTextFont.copyWith(fontSize: 14),
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      email,
+                      style: blackBoldTextFont.copyWith(fontSize: 14),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   )
                 ],
               ),

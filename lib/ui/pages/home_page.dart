@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: 160,
+                height: 130,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [

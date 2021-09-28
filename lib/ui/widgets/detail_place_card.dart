@@ -23,7 +23,9 @@ class DetailPlaceCard extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(5, 20, 10, 0),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(16)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -79,7 +81,9 @@ class DetailPlaceCard extends StatelessWidget {
                     Text(
                       "${place.rating} (dari 3 review)",
                       style: blackMediumTextFont.copyWith(
-                          fontSize: 12, color: greyColor),
+                        fontSize: 12,
+                        color: greyColor,
+                      ),
                     ),
                   ],
                 ),
