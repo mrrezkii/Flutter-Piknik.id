@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/model/place_model.dart';
-import 'package:flutter_basic/ui/pages/detail_page.dart';
+
+import 'ui/pages/splash_screen_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
-      home: DetailPage(mockPlace[0]),
+      home: SplashScreenPage(),
     );
   }
 }

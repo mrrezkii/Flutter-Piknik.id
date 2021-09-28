@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/model/place_model.dart';
 import 'package:flutter_basic/shared/theme.dart';
+import 'package:flutter_basic/ui/pages/detail_page.dart';
+import 'package:flutter_basic/ui/pages/show_more_page.dart';
 import 'package:flutter_basic/ui/widgets/menu_icon.dart';
 import 'package:flutter_basic/ui/widgets/place_card.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,9 +95,17 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(
-                    'Lihat Semua',
-                    style: blueMediumTextFont.copyWith(fontSize: 10),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ShowMorePage();
+                      }));
+                    },
+                    child: Text(
+                      'Lihat Semua',
+                      style: blueMediumTextFont.copyWith(fontSize: 10),
+                    ),
                   )
                 ],
               ),
@@ -109,7 +119,14 @@ class HomePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     Row(
-                      children: mockPlace.map((e) => PlaceCard(e)).toList(),
+                      children: mockPlace
+                          .map((e) => PlaceCard(e, () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return DetailPage(e);
+                                }));
+                              }))
+                          .toList(),
                     ),
                   ],
                 ),
