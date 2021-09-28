@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/model/place_model.dart';
+import 'package:flutter_basic/model/user_model.dart';
 import 'package:flutter_basic/shared/theme.dart';
 import 'package:flutter_basic/ui/pages/detail_page.dart';
 import 'package:flutter_basic/ui/pages/show_more_page.dart';
@@ -9,7 +10,9 @@ import 'package:flutter_basic/ui/widgets/place_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final UserModel user;
+
+  HomePage(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi, Rezki',
+                        'Hi, ${user.name}',
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
@@ -113,6 +116,7 @@ class HomePage extends StatelessWidget {
                 height: 21,
               ),
               Container(
+                margin: EdgeInsets.only(bottom: 55),
                 width: double.infinity,
                 height: 160,
                 child: ListView(
@@ -123,7 +127,7 @@ class HomePage extends StatelessWidget {
                           .map((e) => PlaceCard(e, () {
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context) {
-                                  return DetailPage(e);
+                                  return DetailPage(mockUser, e);
                                 }));
                               }))
                           .toList(),

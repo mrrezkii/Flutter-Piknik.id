@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/model/user_model.dart';
 import 'package:flutter_basic/shared/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,14 +18,14 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _currentTab = 0;
   final List<Widget> screens = [
-    HomePage(),
+    HomePage(mockUser),
     OrderPage(),
     NotificationPage(),
     AccountPage()
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = HomePage();
+  Widget currentScreen = HomePage(mockUser);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class _MainPageState extends State<MainPage> {
                 minWidth: 40,
                 onPressed: () {
                   setState(() {
-                    currentScreen = HomePage();
+                    currentScreen = HomePage(mockUser);
                     _currentTab = 0;
                   });
                 },

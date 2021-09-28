@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_basic/model/place_model.dart';
+import 'package:flutter_basic/model/user_model.dart';
 import 'package:flutter_basic/shared/theme.dart';
 import 'package:flutter_basic/ui/pages/detail_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -115,7 +116,7 @@ class DetailPlaceCard extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return DetailPage(place);
+                      return DetailPage(mockUser, place);
                     }));
                   },
                 ),

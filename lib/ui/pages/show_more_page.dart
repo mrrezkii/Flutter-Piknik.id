@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_basic/model/place_model.dart';
+import 'package:flutter_basic/model/user_model.dart';
 import 'package:flutter_basic/shared/theme.dart';
 import 'package:flutter_basic/ui/widgets/detail_place_card.dart';
 
@@ -49,7 +50,7 @@ class ShowMorePage extends StatelessWidget {
                       .map((e) => DetailPlaceCard(e, () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return DetailPage(e);
+                              return DetailPage(mockUser, e);
                             }));
                           }))
                       .toList(),
