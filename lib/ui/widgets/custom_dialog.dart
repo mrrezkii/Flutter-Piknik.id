@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_basic/shared/theme.dart';
 
 class CustomDialog extends StatelessWidget {
-  final String nama;
+  final String name;
   final String email;
-  final String tanggal_lahir;
-  final String jenis_kelamin;
-  final String rekomendasi;
+  final String birthday;
+  final String gender;
+  final String recommendation;
 
   CustomDialog(
-      {required this.nama,
+      {required this.name,
       required this.email,
-      required this.tanggal_lahir,
-      required this.jenis_kelamin,
-      this.rekomendasi = ''});
+      required this.birthday,
+      required this.gender,
+      this.recommendation = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class CustomDialog extends StatelessWidget {
                     style: blackTextFont.copyWith(fontSize: 14),
                   ),
                   Text(
-                    nama,
+                    name,
                     style: blackBoldTextFont.copyWith(fontSize: 14),
                   )
                 ],
@@ -84,7 +84,7 @@ class CustomDialog extends StatelessWidget {
                     style: blackTextFont.copyWith(fontSize: 14),
                   ),
                   Text(
-                    tanggal_lahir,
+                    birthday,
                     style: blackBoldTextFont.copyWith(fontSize: 14),
                   )
                 ],
@@ -96,7 +96,7 @@ class CustomDialog extends StatelessWidget {
                     style: blackTextFont.copyWith(fontSize: 14),
                   ),
                   Text(
-                    jenis_kelamin,
+                    gender,
                     style: blackBoldTextFont.copyWith(fontSize: 14),
                   )
                 ],
@@ -108,7 +108,7 @@ class CustomDialog extends StatelessWidget {
                     style: blackTextFont.copyWith(fontSize: 14),
                   ),
                   Text(
-                    rekomendasi,
+                    recommendation,
                     style: blackBoldTextFont.copyWith(fontSize: 14),
                   )
                 ],

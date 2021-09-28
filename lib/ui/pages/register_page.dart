@@ -10,10 +10,10 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  TextEditingController namaController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController tanggalLahirController = TextEditingController();
+  TextEditingController birthdayController = TextEditingController();
 
   gender? chooseGender = gender.M;
   bool? cbBumper = false;
@@ -45,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 28,
               ),
               TextField(
-                controller: namaController,
+                controller: nameController,
                 decoration: InputDecoration(
                     hintText: "Nama",
                     border: OutlineInputBorder(
@@ -88,7 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: 12,
               ),
               TextField(
-                controller: tanggalLahirController,
+                controller: birthdayController,
                 showCursor: true,
                 readOnly: true,
                 decoration: InputDecoration(
@@ -102,12 +102,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 onTap: () {
                   showDatePicker(
                           context: context,
-                          initialDate: DateTime(2000),
+                          initialDate: DateTime.now(),
                           firstDate: DateTime(1945),
                           lastDate: DateTime.now())
                       .then((date) {
                     setState(() {
-                      tanggalLahirController.text =
+                      birthdayController.text =
                           "${date!.day}-${date.weekday}-${date.year}";
                     });
                   });
@@ -241,10 +241,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     bool emailValid = RegExp(
                             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                         .hasMatch(emailController.text);
-                    if (namaController.text.trim() == "" ||
+                    if (nameController.text.trim() == "" ||
                         emailController.text.trim() == "" ||
                         passwordController.text.trim() == "" ||
-                        tanggalLahirController.text.trim() == "") {
+                        birthdayController.text.trim() == "") {
                       final snackBar = SnackBar(
                         content: const Text('Lengkapi data Anda'),
                         action: SnackBarAction(
@@ -282,13 +282,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       showDialog(
                           context: context,
                           builder: (context) => CustomDialog(
-                                nama: namaController.text,
+                                name: nameController.text,
                                 email: emailController.text,
-                                tanggal_lahir: tanggalLahirController.text,
-                                jenis_kelamin: (chooseGender == gender.M)
+                                birthday: birthdayController.text,
+                                gender: (chooseGender == gender.M)
                                     ? "Laki - laki"
                                     : "Perempuan",
-                                rekomendasi: enableCb,
+                                recommendation: enableCb,
                               ));
                     }
                   },

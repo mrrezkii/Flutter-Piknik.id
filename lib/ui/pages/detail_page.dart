@@ -240,16 +240,14 @@ class _DetailPageState extends State<DetailPage> {
                       style: blueSemiTextFont.copyWith(fontSize: 16),
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: accentColor
-                      ),
+                      style: ElevatedButton.styleFrom(primary: accentColor),
                       child: Text(
                         "Pesan Sekarang",
                         style: blackTextFont.copyWith(
                             fontSize: 12, color: Colors.white),
                       ),
-                      onPressed: () {
-                      },),
+                      onPressed: () {},
+                    ),
                   ],
                 )
               ],
