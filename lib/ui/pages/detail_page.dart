@@ -8,10 +8,10 @@ import 'package:flutter_basic/shared/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DetailPage extends StatefulWidget {
-  final UserModel user;
-  final PlaceModel place;
+  late UserModel? user;
+  late PlaceModel? place;
 
-  DetailPage(this.user, this.place);
+  DetailPage([this.user, this.place]);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -24,13 +24,30 @@ class _DetailPageState extends State<DetailPage> {
   TextEditingController locationController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    if (widget.place == null) {
+      widget.place = PlaceModel(
+          name: "Nama Tempat",
+          location: "Lokasi",
+          url:
+              "https://cdn.pixabay.com/photo/2018/03/23/22/11/question-mark-3255140_960_720.jpg",
+          price: 0,
+          rating: 0);
+    }
+    if (widget.user == null) {
+      widget.user = UserModel(name: "Nama", email: "Email", gender: "Gender");
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF5F7F7),
       appBar: AppBar(
         backgroundColor: primaryColor,
         brightness: Brightness.dark,
-        title: Text(widget.place.name),
+        title: Text((widget.place!.name) ?? "Nama"),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -48,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Image.network(
-                widget.place.url,
+                widget.place!.url,
                 width: double.infinity,
               ),
             ],
@@ -68,7 +85,7 @@ class _DetailPageState extends State<DetailPage> {
                       width: 8,
                     ),
                     Text(
-                      widget.place.location,
+                      widget.place!.location,
                       style:
                           blackTextFont.copyWith(fontSize: 9, color: greyColor),
                     )
@@ -78,7 +95,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 6,
                 ),
                 Text(
-                  widget.place.name,
+                  widget.place!.name,
                   style: blueSemiTextFont.copyWith(fontSize: 18),
                 ),
                 SizedBox(
@@ -144,14 +161,16 @@ class _DetailPageState extends State<DetailPage> {
                           width: 5,
                         ),
                         Text(
-                          '${widget.place.rating}',
+                          '${widget.place!.rating}',
                           style: blueMediumTextFont.copyWith(fontSize: 13),
                         ),
                         SizedBox(
                           width: 5,
                         ),
                         Text(
-                          (widget.place.price) > 4.5 ? "Sangat Bagus" : "Bagus",
+                          (widget.place!.price) > 4.5
+                              ? "Sangat Bagus"
+                              : "Bagus",
                           style: blueTextFont.copyWith(fontSize: 9),
                         ),
                       ],
@@ -173,7 +192,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: nameController..text = widget.user.name,
+                  controller: nameController..text = widget.user!.name,
                   decoration: InputDecoration(
                       hintText: "Nama",
                       border: OutlineInputBorder(
@@ -187,7 +206,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: emailController..text = widget.user.email,
+                  controller: emailController..text = widget.user!.email,
                   decoration: InputDecoration(
                       hintText: "Email",
                       border: OutlineInputBorder(
@@ -201,7 +220,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: placeNameController..text = widget.place.name,
+                  controller: placeNameController..text = widget.place!.name,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -217,7 +236,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: 7,
                 ),
                 TextField(
-                  controller: locationController..text = widget.place.location,
+                  controller: locationController..text = widget.place!.location,
                   readOnly: true,
                   enabled: false,
                   decoration: InputDecoration(
@@ -236,7 +255,7 @@ class _DetailPageState extends State<DetailPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Rp${widget.place.price}',
+                      'Rp${widget.place!.price}',
                       style: blueSemiTextFont.copyWith(fontSize: 16),
                     ),
                     ElevatedButton(

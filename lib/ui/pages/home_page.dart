@@ -116,7 +116,6 @@ class HomePage extends StatelessWidget {
                 height: 21,
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 55),
                 width: double.infinity,
                 height: 160,
                 child: ListView(
@@ -135,6 +134,25 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: accentColor),
+                child: Text(
+                  "Preview Tempat Wisata",
+                  style:
+                      blackTextFont.copyWith(fontSize: 12, color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return DetailPage();
+                  }));
+                },
+              ),
+              SizedBox(
+                height: 55,
+              )
             ],
           ),
         ),
